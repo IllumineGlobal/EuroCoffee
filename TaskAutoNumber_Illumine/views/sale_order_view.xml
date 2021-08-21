@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+  <data>
+     <record model="ir.ui.view" id="sale_order_kamalitha_customzied">
+        <field name="name">sale.orde.kamalitha.customzied</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='partner_id']" position="after">
+            
+            <field name="delivery_place" />
+
+         </xpath>
+
+
+         <xpath expr="//field[@name='date_order']" position="after">
+            
+            <field name="first_charges" />
+            <field name="second_charges" />
+            <field name="total_charges" />
+            
+
+         </xpath>
+           
+
+
+
+
+            
+        </field>
+     </record>
+
+  </data>
+</odoo>
