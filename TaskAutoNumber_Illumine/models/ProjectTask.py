@@ -36,10 +36,10 @@ class ProjectTask(models.Model):
             elif rec.project_id.name == "Uplift":
                 rec.name = 'UP-' + str(calendar.timegm(time.gmtime()))
 
-            elif project_name == "Premium Response":
+            elif rec.project_id.name == "Premium Response":
                 rec.name = 'PR-' + str(calendar.timegm(time.gmtime()))
 
-            elif project_name == "Service Call":
+            elif rec.project_id.name == "Service Call":
                 rec.name = 'SC-' + str(calendar.timegm(time.gmtime()))
 
             else:
