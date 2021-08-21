@@ -36,8 +36,14 @@ class ProjectTask(models.Model):
             elif rec.project_id.name == "Uplift":
                 rec.name = 'UP-' + str(calendar.timegm(time.gmtime()))
 
+            elif project_name == "Premium Response":
+                rec.name = 'PR-' + str(calendar.timegm(time.gmtime()))
+
+            elif project_name == "Service Call":
+                rec.name = 'SC-' + str(calendar.timegm(time.gmtime()))
+
             else:
-                rec.name = 'Please select a Project'
+                rec.name = 'PRJ-' + str(calendar.timegm(time.gmtime()))
 
     def get_number_onsave(self, current_id, project_name):
         if project_name == 'Office Design':
@@ -52,7 +58,7 @@ class ProjectTask(models.Model):
         elif project_name == "Internal":
             return 'IN-' + str(current_id).zfill(5)
 
-        elif project_name == "Preventive Maintenance":
+        elif project_name == "Planned Preventive Maintenance":
             return 'PM-' + str(current_id).zfill(5)
 
         elif project_name == "Other":
@@ -63,6 +69,12 @@ class ProjectTask(models.Model):
 
         elif project_name == "Uplift":
             return 'UP-' + str(current_id).zfill(5)
+
+        elif project_name == "Premium Response":
+            return 'PR-' + str(current_id).zfill(5)
+
+        elif project_name == "Service Call":
+            return 'SC-' + str(current_id).zfill(5)
 
         else:
             return 'PRJ-' + str(current_id).zfill(5)

@@ -2,14 +2,14 @@
 
 {
     "name": "Project Task Auto Number Module",
-    "summary": "Generates Project Task Number automatically based on the selected Project",
+    "summary": "Generates Project Task Number automatically based on the selected product",
     "version": "1.0.0",
     "category": 'Sales',
     "website": "https://www.minacto.com",
-    "description": """Generates Project Task Number automatically based on the selected Project""",
-    'author': 'Kamalitha Gunasinghe',
+    "description": """Generates Project Task Number automatically based on the selected product""",
+    'author': 'Kamalitha',
     'company': 'Illumine',
-    'maintainer': 'Kamalitha Gunasinghe',
+    'maintainer': 'Kamalitha',
     "depends": [
         'project',
     ],
