@@ -7,9 +7,9 @@
     "category": 'Sales',
     "website": "https://www.minacto.com",
     "description": """Generates Project Task Number automatically based on the selected Project""",
-    'author': 'Kamalitha Gunasinghe',
+    'author': 'Kamalitha',
     'company': 'Illumine',
-    'maintainer': 'Kamalitha Gunasinghe',
+    'maintainer': 'Kamalitha',
     "depends": [
         'project',
     ],
