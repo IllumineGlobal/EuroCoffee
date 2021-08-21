@@ -24,7 +24,7 @@ class ProjectTask(models.Model):
             elif rec.project_id.name == "Internal":
                 rec.name = 'IN-' + str(calendar.timegm(time.gmtime()))
 
-            elif rec.project_id.name == "Preventive Maintenance":
+            elif rec.project_id.name == "Planned Preventive Maintenance":
                 rec.name = 'PM-' + str(calendar.timegm(time.gmtime()))
 
             elif rec.project_id.name == "Other":
