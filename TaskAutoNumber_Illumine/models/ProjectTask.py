@@ -13,37 +13,37 @@ class ProjectTask(models.Model):
     def get_auto_number(self):
         for rec in self:
             if rec.project_id.name =='Office Design':
-                rec.name = 'OD-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'OD-'
 
             elif rec.project_id.name == "Research & Development":
-                rec.name = 'RD-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'RD-'
 
             elif rec.project_id.name == "Installation":
-                rec.name = 'IN-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'IN-'
 
             elif rec.project_id.name == "Internal":
-                rec.name = 'IN-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'IN-'
 
             elif rec.project_id.name == "Planned Preventive Maintenance":
-                rec.name = 'PM-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'PM-'
 
             elif rec.project_id.name == "Other":
-                rec.name = 'OT-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'OT-'
 
             elif rec.project_id.name == "Workshop":
-                rec.name = 'WS-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'WS-'
 
             elif rec.project_id.name == "Uplift":
-                rec.name = 'UP-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'UP-'
 
             elif rec.project_id.name == "Premium Response":
-                rec.name = 'PR-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'PR-'
 
             elif rec.project_id.name == "Service Call":
-                rec.name = 'SC-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'SC-'
 
             else:
-                rec.name = 'PRJ-' + str(calendar.timegm(time.gmtime()))
+                rec.name = 'Please select a project'
 
     def get_number_onsave(self, current_id, project_name):
         if project_name == 'Office Design':
@@ -77,7 +77,7 @@ class ProjectTask(models.Model):
             return 'SC-' + str(current_id).zfill(5)
 
         else:
-            return 'PRJ-' + str(current_id).zfill(5)
+            return 'OTHER-' + str(current_id).zfill(5)
 
 
     @api.model
