@@ -42,6 +42,9 @@ class ProjectTask(models.Model):
             elif rec.project_id.name == "Service Call":
                 rec.name = 'SC-'
 
+            elif rec.project_id.name == "Barista Call":
+                rec.name = 'BA-'
+
             else:
                 rec.name = 'Please select a project'
 
@@ -75,6 +78,9 @@ class ProjectTask(models.Model):
 
         elif project_name == "Service Call":
             return 'SC-' + str(current_id).zfill(5)
+
+        elif project_name == "Barista Call":
+            return 'BA-' + str(current_id).zfill(5)
 
         else:
             return 'OTHER-' + str(current_id).zfill(5)
