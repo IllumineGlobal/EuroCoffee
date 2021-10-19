@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="asset_list_view" model="ir.ui.view">
+        <field name="name">asset.list.view</field>
+        <field name="model">asset.master</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="asset_id"/>
+                <field name="description"/>
+                <field name="serial_number"/>
+                <field name="acquisition_date"/>
+                <field name="customer_partner_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="asset_form_view" model="ir.ui.view">
+        <field name="name">asset.form.view</field>
+        <field name="model">asset.master</field>
+        <field name="arch" type="xml">
+            <form>
+                <notebook position="inside">
+                    <page string="Asset Details">
+                            <group>
+                                <group>
+                                    <field name="asset_id" />
+                                    <field name="description" />
+                                    <field name="serial_number" />
+                                    <field name="acquisition_date"/>
+                                    <field name="customer_partner_id"/>
+                                </group>
+                            </group>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_asset_profile" model="ir.actions.act_window">
+        <field name="name">Asset List</field>
+        <field name="res_model">asset.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+             <p class="o_view_nocontent_smiling_face">
+                 Create your first Asset..!
+             </p>
+         </field>
+    </record>
+
+    <menuitem id="asset_root_menu" name="Assets Manager" web_icon="asset,static/description/icon.png" />
+    <menuitem id="asset_sub_menu" parent="asset_root_menu" name="Assets" action="action_asset_profile" />
+
+</odoo>

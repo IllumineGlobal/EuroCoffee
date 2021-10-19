@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="customer_contracts">
+            <field name="name">customer.contracts</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Contract Details">
+                        <field name="contract_details">
+                            <tree create="false">
+                                <field name="contract_no" />
+                                <field name="contract_start_date" />
+                                <field name="contract_end_date" />
+                                <field name="contract_status" />
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

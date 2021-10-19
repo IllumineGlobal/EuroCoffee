@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+     <record id="contracts_list_view" model="ir.ui.view">
+        <field name="name">contracts.list.view</field>
+        <field name="model">contracts.master</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="contract_no"/>
+                <field name="contract_start_date"/>
+                <field name="contract_end_date"/>
+                <field name="contract_status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contracts_form_view" model="ir.ui.view">
+        <field name="name">contracts.form.view</field>
+        <field name="model">contracts.master</field>
+        <field name="arch" type="xml">
+            <form class="o_group_col_6">
+                <group>
+                    <field name="contract_no" style="width:20%%"  />
+                    <field name="contract_start_date" style="width:20%%" />
+                    <field name="contract_end_date" style="width:20%%" />
+                    <field name="contract_status" style="width:20%%" />
+                    <field name="contract_customer_partner_id" style="width:20%%" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="contracts_profile" model="ir.actions.act_window">
+        <field name="name">Contracts List</field>
+        <field name="res_model">contracts.master</field>
+        <field name="view_mode">tree,form</field>
+         <field name="help" type="html">
+             <p class="o_view_nocontent_smiling_face">
+                 Create your first Contract..!
+             </p>
+         </field>
+    </record>
+
+    <menuitem id="asset_contract_menu" name="Contracts" parent="AssetManager.asset_root_menu" action="contracts_profile" />
+
+</odoo>
