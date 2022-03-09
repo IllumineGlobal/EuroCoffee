@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title >POS Customer Screen</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="/web/static/lib/fontawesome/css/font-awesome.css"/>
+		<script class="origin" type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
+        <script type="text/javascript">
+            {{ main_js|safe }}
+        </script>
+		<style>
+			{{main_css|safe }}
+		</style>
+		<style>
+			{{bootstrap_css|safe }}
+		</style>
+		<script>
+			{{bootstrap_js|safe }}
+		</script>
+	</head>
+	<body>
+		<div class="main_body">
+			<div style="background:#80808047;height: 100%;">
+				<div class="wrap_loading">
+					<div class="d-flex justify-content-center" >
+						<div class="wk-loader"></div>
+					</div>
+					<div class="loading-content">
+						Your POS Session is not started yet, Please start to begin!!
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
