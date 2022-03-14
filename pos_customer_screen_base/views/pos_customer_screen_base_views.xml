@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+<odoo>
+	<data>
+
+		<record id="pos_config_form_inherited" model="ir.ui.view">
+			<field name="name">pos.config.form.inherit</field>
+			<field name="model">pos.config</field>
+			<field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+			<field name="arch" type="xml">
+                <xpath expr="//div[@id='barcode_scanner']" position="after">
+					<div id="pos_review_screen" class="col-12 col-lg-6 o_setting_box">
+						<div class="o_setting_left_pane">
+						</div>
+						<div class="o_setting_right_pane">
+							<span class="o_form_label">Pos Customer Screen</span>
+							<div class="text-muted">
+								Add the banners, title and other stuffs..
+							</div>
+							<div class="content-group mt16 row">
+								<field name="pos_review_screen" invisible="1"/>
+							</div>
+							<div>
+								<div class="mt8">
+									<button name="open_screen_configuration" type="object" string="Screen Configuration" class="btn-link" icon="fa-arrow-right"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+
+
+
+		<record id="pos_screen_conf_tree" model="ir.ui.view">
+			<field name="name">pos.screen.config.tree</field>
+			<field name="model">pos.screen.config</field>
+			<field name="arch" type="xml">
+				<tree string="POS Screen Config Tree">
+					<field name="related_id" string="Pos Config"/>
+					<field name="ip_address"/>
+					<field name="url" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="pos_screen_conf_form" model="ir.ui.view">
+			<field name="name">pos.screen.config.form</field>
+			<field name="model">pos.screen.config</field>
+			<field name="arch" type="xml">
+				<form string="POS Screen Form">
+					<sheet>
+						<h1 style="text-align:center;" name="configuration">General Configurations</h1>
+						<div class="row mt16 o_settings_container" id="general_conf">
+							<group col="2" colspan="2">
+								<div id="ip_address" class="col-12 col-lg-6 o_setting_box">
+									<div class="o_setting_right_pane">
+										<label for="ip_address" string="IP Address"/>
+										<div class="text-muted">
+											IP Address for connection
+										</div>
+										<field name="ip_address" style="width:400px;"/>
+									</div>
+									<div class="o_setting_left_pane">
+									</div>
+								</div>
+								<div class="col-12 col-lg-6 o_setting_box" >
+									<div class="o_setting_left_pane">
+									</div>
+									<div class="o_setting_right_pane">
+										<label for="related_id"/>
+										<div class="text-muted">
+											Assign this configuration to POS
+										</div>
+										<field name="related_id" required="1" style="width:400px;"/>
+									</div>
+								</div>
+							</group>
+							<group col="2" colspan="2">
+								<div class="col-12 col-lg-6 o_setting_box" >
+									<div class="o_setting_left_pane">
+									</div>
+									<div class="o_setting_right_pane">
+										<label for="url"/>
+										<div class="text-muted">
+											Pos Customer Screen Display Url
+										</div>
+										<field name="url"/>
+									</div>
+								</div>
+								<div id="go_to_customer_screen" class="col-12 col-lg-6 o_setting_box">
+									<div class="o_setting_left_pane">
+									</div>
+									<div class="o_setting_right_pane">
+										<span class="o_form_label">Pos Customer Screen</span>
+										<div class="text-muted">
+											Click here to redirect to customer screen
+										</div>
+										<div class="content-group mt16 ml16 row">
+											<button string="Go to Customer Screen" name="redirect_customer_screen" id="customer_screen" class="oe_highlight" type="object"/>
+										</div>
+									</div>
+								</div>
+							</group>
+						</div>
+						<h1 style="text-align:center;" name="screens_configuration">POS Screens Configurations</h1>
+						<separator/>
+						<separator/>
+						<h2 name="welcome_screen">POS Welcome Screen Configuration</h2>
+						<separator/>
+						<div class="row mt16 o_settings_container" id="welcome_conf">
+							<group col="2" colspan="2">
+								<div id="welcome_screen_heading" class="col-12 col-lg-6 o_setting_box">
+									<div class="o_setting_right_pane">
+										<label for="welcome_screen_heading" string="Welcome Screen Heading"/>
+										<div class="text-muted">
+											Welcome Screen Heading
+										</div>
+										<field name="welcome_screen_heading" style="width:400px;"/>
+									</div>
+									<div class="o_setting_left_pane">
+									</div>
+								</div>
+								<div class="col-12 col-lg-6 o_setting_box" >
+									<div class="o_setting_left_pane">
+									</div>
+									<div class="o_setting_right_pane">
+										<label for="welcome_screen_subheading"/>
+										<div class="text-muted">
+											Welcome Screen SubHeading
+										</div>
+										<field name="welcome_screen_subheading" style="width:400px;"/>
+									</div>
+								</div>
+							</group>
+							<group col="2" colspan="2">
+								<div id="welcome_screen_content" class="col-12 col-lg-6 o_setting_box">
+									<div class="o_setting_left_pane">
+									</div>
+									<div class="o_setting_right_pane">
+										<label for="welcome_screen_content" />
+										<div class="text-muted">
+											Show review screen automatically on validation of a POS Order.
+										</div>
+										<field name="welcome_screen_content" style="width:400px;"/>
+									</div>
+								</div>
+							</group>
+							<h3>Promotional Pictures For Welcome Screen</h3>
+							<separator/>
+							<group col="4" colspan="4">
+								<div id="promotions_pictures" class="col-12 col-lg-6 o_setting_box">
+									<label for="promotions_pictures"/>
+									<div class="text-muted">
+										Display Promotional Offers, Pictures or Upcoming events
+									</div>
+									<field name="promotions_pictures" options="{'create_text':'Add Images'}" style="height:150px;">
+										<kanban string="Promotional Pictures">
+											<field name="id" />
+											<field name="image" />
+											<templates>
+												<t t-name="kanban-box">
+													<div class="promotional_image oe_kanban_global_click" style="width:128px;height:128px;">
+														<img style="width:100%;height:100%;" t-att-src="kanban_image('promotions.promotions', 'image', record.id.value)"/>
+													</div>
+												</t>
+											</templates>
+										</kanban>
+										<form>
+											<group>
+												<field name="image" widget="image"/>
+											</group>
+										</form>
+									</field>
+								</div>
+							</group>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record id="promotion_promotion_form" model="ir.ui.view">
+			<field name="name">promotion.promotion.view</field>
+			<field name="model">pos.screen.config</field>
+			<field name="arch" type="xml">
+				<tree string="POS Screen Config Tree">
+					<field name="related_id" string="Pos Config"/>
+					<field name="ip_address"/>
+					<field name="url" />
+				</tree>
+			</field>
+		</record>
+
+    <record id="promotion_promotion_view_form" model="ir.ui.view">
+        <field name="name">promotions.promotions.view.form</field>
+        <field name="model">promotions.promotions</field>
+        <field name="arch" type="xml">
+            <form string="Promotional Images">
+				<group col="4" colspan="4">
+					<field name="image" widget="image"/>
+				</group>
+            </form>
+        </field>
+    </record>
+
+		
+		<record id="pos_screen_config_action_id" model="ir.actions.act_window">
+			<field name="name">POS Screen Config</field>
+            <field name="type">ir.actions.act_window</field>
+			<field name="res_model">pos.screen.config</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="pos_customer_screen_base.pos_screen_conf_tree" />
+		</record>
+
+		<menuitem 
+			id="pos_screen_config_main_menu" 
+			parent="point_of_sale.menu_point_root" 
+			name='Pos Customer Screen'
+			/>
+		
+		<menuitem
+			id="pos_review_screen_menu_id"
+			name="POS Screen Configuration"
+			parent="pos_customer_screen_base.pos_screen_config_main_menu"
+			groups="point_of_sale.group_pos_manager"
+			action="pos_customer_screen_base.pos_screen_config_action_id"
+			sequence="37"
+			/>
+
+	</data>
+</odoo>
