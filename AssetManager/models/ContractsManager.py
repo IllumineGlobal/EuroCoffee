@@ -9,5 +9,4 @@ class ContractsManager(models.Model):
     contract_start_date = fields.Date(string="Contract Start Date")
     contract_end_date = fields.Date(string="Contract End Date")
     contract_status = fields.Selection([('1', 'Active'), ('0', 'Expired')], string='Contract Status')
-    contract_type = fields.Selection([('Service', 'Service'), ('FOL', 'FOL')], string='Contract Type')
     contract_customer_partner_id = fields.Many2one('res.partner', string="Customer")
