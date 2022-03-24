@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="AssetManager.contracts_form_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='contract_customer_partner_id']" position="after">
-                    <field style="width:50%%" name="contract_asset_id" domain="[('customer_partner_id', '=', contract_customer_partner_id)]"/>
+                    <field style="width:20%%" name="contract_asset_id" domain="[('customer_partner_id', '=', contract_customer_partner_id)]"/>
                  </xpath>
             </field>
         </record>
