@@ -14,7 +14,6 @@
                                 <field name="contract_start_date" />
                                 <field name="contract_end_date" />
                                 <field name="contract_status" />
-                                <field name="contract_type" />
                             </tree>
                         </field>
                     </page>
